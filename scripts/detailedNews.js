@@ -1,8 +1,8 @@
-/* let getData= async()=>{
+/*  let getData= async()=>{
 
     let todayDate = new Date().toISOString().split("T")[0];
 
-    let res = await fetch(`https://newsapi.org/v2/everything?q=ipl&from=${todayDate}&sortBy=publishedAt&language=en&apiKey=06534a7328b048a0a25f6eea9a9844c6`);
+    let res = await fetch(`https://newsdata.io/api/1/news?apikey=pub_15613809a2723f4f851780b3997b38b0825e6&q=${query}&to_date=${todayDate}&language=en`);
 
     let data = await res.json();
 
@@ -10,7 +10,7 @@
     localStorage.setItem("news",JSON.stringify(data.articles[0]));
 }
 
-getData(); */
+getData(); */ 
 
 let appendData = (news)=>{
     
@@ -24,8 +24,8 @@ let appendData = (news)=>{
     title.textContent=news.title;
     title.style.fontSize="50px";
 
-    let image=document.createElement("img");
-    image.src=news.urlToImage;
+    /* let image=document.createElement("img");
+    image.src=news.urlToImage; */
 
     let description=document.createElement("h2");
     description.textContent=news.description;
@@ -36,7 +36,7 @@ let appendData = (news)=>{
     let author=document.createElement("h4");
     author.textContent=news.author;
     
-    box.append(title,image,description,content,author);
+    box.append(title,/* image, */description,content,author);
     container.append(box);
 }
 
